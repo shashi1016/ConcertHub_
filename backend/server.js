@@ -58,7 +58,7 @@ async function start() {
     console.log('Connected to MongoDB.');
     await require('./seed')();
     const port = Number(process.env.PORT) || 8080;
-    buildApp().listen(port, () => {
+    buildApp().listen(port, '0.0.0.0', () => {
       console.log(`\n  ConcertHub     → http://localhost:${port}`);
       console.log(`  Admin portal   → http://localhost:${port}/admin/\n`);
     });
